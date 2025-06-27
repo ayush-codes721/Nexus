@@ -19,6 +19,17 @@ const statsSchema = new Schema({
   },
 });
 
+
+const mediaSchema = new Schema({
+  type: {
+    type: String,
+    required: true
+  },
+  url: String,
+  thumbnail: String
+});
+
+
 const postSchema = new Schema(
   {
     userId: {
@@ -30,14 +41,7 @@ const postSchema = new Schema(
       type: String,
     },
     media: [
-      {
-        type: {
-          type: String,
-          required: true,
-        },
-        url: String,
-        thumbnail: String,
-      },
+      mediaSchema
     ],
 
     hashtags: [String],
